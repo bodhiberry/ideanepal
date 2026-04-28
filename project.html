@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | IDEA Nepal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Base Colors & Reset (Consistent with Index/About) */
+        :root {
+            --primary-dark: #00125E;
+            --accent-blue: #38A2E9;
+            --white: #ffffff;
+            --text-gray: #333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--text-gray);
+            background-color: #f4f7f9;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--white);
+            border-bottom: 3px solid var(--primary-dark);
+            padding: 10px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-area img {
+            height: 60px;
+            width: auto;
+        }
+
+        .logo-area h1 {
+            color: var(--primary-dark);
+            font-size: 1.5rem;
+            font-weight: 800;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--primary-dark);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--accent-blue);
+        }
+
+        /* Page Layout */
+        .page-title {
+            background-color: var(--accent-blue);
+            color: white;
+            padding: 40px 5%;
+            text-align: center;
+        }
+
+        .main-container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 40px;
+            align-items: start;
+        }
+
+        /* Project Styling */
+        .project-section h2 {
+            color: var(--primary-dark);
+            margin-bottom: 25px;
+            border-bottom: 3px solid var(--accent-blue);
+            padding-bottom: 10px;
+        }
+
+        .project-card {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 5px solid var(--primary-dark);
+        }
+
+        .project-card h3 {
+            color: var(--primary-dark);
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        .project-card ul {
+            margin-left: 20px;
+            list-style-type: square;
+        }
+
+        .project-card ul li {
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #eef7ff;
+            color: var(--primary-dark);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        /* Side Photo Styling (Same as About) */
+        .side-photos {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .side-photos img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border: 4px solid white;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-dark);
+            color: var(--white);
+            padding: 40px 5%;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-info h3 {
+            margin-bottom: 15px;
+            color: var(--accent-blue);
+        }
+
+        .social-icons {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-icons a {
+            color: var(--white);
+            font-size: 1.5rem;
+            transition: 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: var(--accent-blue);
+            transform: translateY(-5px);
+        }
+
+        .footer-bottom {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .main-container {
+                grid-template-columns: 1fr;
+            }
+            .side-photos {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+            }
+            nav ul {
+                margin-top: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .side-photos {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" style="text-decoration: none;">
+            <div class="logo-area">
+                <img src="logo.png" alt="IDEA Nepal Logo">
+                <h1>IDEA Nepal</h1>
+            </div>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="project.html" style="color: var(--accent-blue);">Projects</a></li>
+                <li><a href="partners.html">Partners</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="page-title">
+        <h1>Our Projects</h1>
+    </section>
+
+    <main class="main-container">
+        
+        <div class="project-section">
+            <h2>Project List – Association for IDEA Nepal</h2>
+
+            <div class="project-card">
+                <h3>1. Advocacy & Awareness Project</h3>
+                <ul>
+                    <li>Promoting dignity and human rights for people affected by leprosy</li>
+                    <li>Reducing stigma and discrimination in communities</li>
+                    <li>Policy advocacy and social inclusion initiatives</li>
+                </ul>
+            </div>
+
+            <div class="project-card">
+                <h3>2. Psychosocial Support & Mental Health Project</h3>
+                <ul>
+                    <li>Counseling and emotional support services</li>
+                    <li>Community-based mental health programs</li>
+                    <li>Well-being and confidence-building activities</li>
+                </ul>
+            </div>
+
+            <div class="project-card">
+                <h3>3. Livelihood & Economic Empowerment Project</h3>
+                <ul>
+                    <li>Skill development and income-generating activities</li>
+                    <li>Financial support (seed money for small businesses)</li>
+                    <li>Promoting sustainable livelihoods</li>
+                </ul>
+            </div>
+
+            <div class="project-card">
+                <h3>4. Education Support Project</h3>
+                <ul>
+                    <li>Formal education support for affected communities</li>
+                    <li>Scholarships for students affected by leprosy</li>
+                    <li>Awareness programs to promote education access</li>
+                </ul>
+            </div>
+
+            <div class="project-card">
+                <h3>5. Recovery & Rehabilitation Project</h3>
+                <ul>
+                    <li>Construction of permanent shelters</li>
+                    <li>Home renovation and maintenance support</li>
+                    <li>Sanitation facilities (toilet construction)</li>
+                    <li>Implemented in Province No. 1 (Biratnagar & Sunsari)</li>
+                    <li>Supported 5 families</li>
+                </ul>
+            </div>
+
+            <div class="project-card">
+                <h3>6. Emergency Support Project (COVID-19 Response)</h3>
+                <ul>
+                    <li>“COVID-19 Support Project for Persons Affected by Leprosy”</li>
+                    <li>Distribution of seed money to beneficiaries</li>
+                    <li>Scholarship support to 20 individuals</li>
+                </ul>
+                <span class="tag">Supported by Sasakawa Health Foundation, Japan</span>
+            </div>
+
+            <div class="project-card">
+                <h3>7. Community Support Project</h3>
+                <ul>
+                    <li>Community engagement and outreach programs</li>
+                    <li>Support to vulnerable families</li>
+                    <li>Volunteer-led assistance and local coordination</li>
+                </ul>
+            </div>
+
+            <div class="project-card">
+                <h3>8. Housing Support Project</h3>
+                <ul>
+                    <li>Building houses for affected people</li>
+                    <li>Improving living conditions</li>
+                    <li>Ensuring safe and dignified shelter</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="side-photos">
+            <img src="project1.jpg" alt="Advocacy Project">
+            <img src="project2.jpg" alt="Livelihood Support">
+            <img src="project3.jpg" alt="Education Support">
+            <img src="project4.jpg" alt="Housing Project">
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-info">
+                <h3>Contact Us</h3>
+                <p>Pawan Galli, Dhumbarai</p>
+                <p>Kathmandu 44600, Nepal</p>
+            </div>
+            <div class="footer-info">
+                <h3>Get In Touch</h3>
+                <p>Email: info@idealeprosy.org.np</p>
+                <p>Tel: +977 9851253312</p>
+            </div>
+        </div>
+
+        <div class="social-icons">
+            <a href="https://www.facebook.com/ideanepal1998" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+
+        <div class="footer-bottom">
+            &copy; 2026 IDEA Nepal. All Rights Reserved.
+        </div>
+    </footer>
+
+</body>
+</html>

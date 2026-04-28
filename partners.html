@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Partners | IDEA Nepal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Base Colors & Reset (Consistent with Index/About/Project) */
+        :root {
+            --primary-dark: #00125E;
+            --accent-blue: #38A2E9;
+            --white: #ffffff;
+            --text-gray: #333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--text-gray);
+            background-color: #f4f7f9;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--white);
+            border-bottom: 3px solid var(--primary-dark);
+            padding: 10px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-area img {
+            height: 60px;
+            width: auto;
+        }
+
+        .logo-area h1 {
+            color: var(--primary-dark);
+            font-size: 1.5rem;
+            font-weight: 800;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--primary-dark);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--accent-blue);
+        }
+
+        /* Page Layout */
+        .page-title {
+            background-color: var(--accent-blue);
+            color: white;
+            padding: 40px 5%;
+            text-align: center;
+        }
+
+        .main-container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 40px;
+            align-items: start;
+        }
+
+        /* Partner Styling */
+        .partner-section h2 {
+            color: var(--primary-dark);
+            margin-bottom: 25px;
+            border-bottom: 3px solid var(--accent-blue);
+            padding-bottom: 10px;
+        }
+
+        .partner-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+        }
+
+        .partner-card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            border-top: 4px solid var(--accent-blue);
+        }
+
+        .partner-card h3 {
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        .partner-card p {
+            color: #555;
+            text-align: justify;
+        }
+
+        .coming-soon {
+            background: #f0f0f0;
+            border: 2px dashed #ccc;
+            padding: 20px;
+            text-align: center;
+            color: #888;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        /* Side Photos (Consistent with previous pages) */
+        .side-photos {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .side-photos img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border: 4px solid white;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-dark);
+            color: var(--white);
+            padding: 40px 5%;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-info h3 {
+            margin-bottom: 15px;
+            color: var(--accent-blue);
+        }
+
+        .social-icons {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-icons a {
+            color: var(--white);
+            font-size: 1.5rem;
+            transition: 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: var(--accent-blue);
+            transform: translateY(-5px);
+        }
+
+        .footer-bottom {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            .main-container {
+                grid-template-columns: 1fr;
+            }
+            .side-photos {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+            }
+            nav ul {
+                margin-top: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .side-photos {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" style="text-decoration: none;">
+            <div class="logo-area">
+                <img src="logo.png" alt="IDEA Nepal Logo">
+                <h1>IDEA Nepal</h1>
+            </div>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="project.html">Projects</a></li>
+                <li><a href="partners.html" style="color: var(--accent-blue);">Partners</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="page-title">
+        <h1>Our Partners</h1>
+    </section>
+
+    <main class="main-container">
+        
+        <div class="partner-section">
+            <h2>Working Together for a Better Future</h2>
+            
+            <div class="partner-grid">
+                <div class="partner-card">
+                    <h3>Nepra e. V.</h3>
+                    <p>
+                        Nepra e.V. collaborated with IDEA Nepal for the first time to implement emergency COVID-19 relief efforts. The reporting was timely, detailed, and professional, which has encouraged us to continue implementing further projects in partnership with IDEA Nepal..
+                    </p>
+                </div>
+
+                <div class="partner-card">
+                    <h3>Sasakawa Leprosy (Hansen’s Disease) Initiative</h3>
+                    <p>
+                        The Sasakawa Leprosy (Hansen’s Disease) Initiative is a strategic alliance that links together the WHO Goodwill Ambassador for Leprosy Elimination, Sasakawa Health Foundation, and The Nippon Foundation for the purpose of achieving a leprosy-free world.
+                    </p>
+                </div>
+            </div>
+
+            <div class="coming-soon">
+                <p><i class="fas fa-plus-circle"></i> More partners coming soon...</p>
+            </div>
+        </div>
+
+        <div class="side-photos">
+            <img src="partner1.jpg" alt="Partner Activity">
+            <img src="partner2.jpg" alt="Collaboration">
+            <img src="partner3.jpg" alt="Network">
+            <img src="partner4.jpg" alt="Support">
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-info">
+                <h3>Contact Us</h3>
+                <p>Pawan Galli, Dhumbarai</p>
+                <p>Kathmandu 44600, Nepal</p>
+            </div>
+            <div class="footer-info">
+                <h3>Get In Touch</h3>
+                <p>Email: info@idealeprosy.org.np</p>
+                <p>Tel: +977 9851253312</p>
+            </div>
+        </div>
+
+        <div class="social-icons">
+            <a href="https://www.facebook.com/ideanepal1998" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+
+        <div class="footer-bottom">
+            &copy; 2026 IDEA Nepal. All Rights Reserved.
+        </div>
+    </footer>
+
+</body>
+</html>
